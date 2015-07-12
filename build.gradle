@@ -1,0 +1,11 @@
+apply plugin: "java"
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+}
+
+dependencies {
+}
