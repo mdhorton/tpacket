@@ -147,9 +147,8 @@ public abstract class TPacketHandler implements LibcConstants {
     protected void handleUnknownIpType(final long offset, final int snaplen) { }
 
     protected void ipV4Payload(final int snaplen) {
-        final int payloadLen = ipHdr.tot_len - ipHdr.hdr_len_bytes;
+        final int payloadLen = Short.toUnsignedInt(ipHdr.tot_len) - ipHdr.hdr_len_bytes;
         final int truncated = Math.min(snaplen, payloadLen);
-
         buffer.getBytes(payload, truncated);
     }
 }

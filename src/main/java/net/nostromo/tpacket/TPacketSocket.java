@@ -96,4 +96,24 @@ public abstract class TPacketSocket implements LibcConstants {
     public void enablePromiscuous() {
         util.enablePromiscMode(sock, ifname);
     }
+
+    public void attachFilter(final Object[][] filterObjs) {
+        util.attachFilter(sock, filterObjs);
+    }
+
+    public int getSock() {
+        return sock;
+    }
+
+    public long getMmap() {
+        return mmap;
+    }
+
+    public int getFrameSize() {
+        return frameSize;
+    }
+
+    public int getFrameCnt() {
+        return frameCnt;
+    }
 }
